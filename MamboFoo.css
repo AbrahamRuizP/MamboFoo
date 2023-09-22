@@ -44,12 +44,19 @@ html {
     html {
         font-size: 55%;
     }
+    body {
+        background-color: green;
+    }
 } 
 
 /* 350px / 10px = 35rem */
 @media (max-width: 35rem) {
     html {
         font-size: 44%;
+    }
+
+    body {
+        background-color: red;
     }
 }
 
