@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: rgba(145, 145, 255, 0.445);
+    --color-campo-amigo: rgb(175, 175, 238);
+    --color-campo-enemigo: rgb(216, 214, 214);
+    --color-armor: rgb(104, 85, 85);
+    --color-enemigo-level2: red;
+    --color-enemigo-level3: red;
+    --color-enemigo-level4: red;
+    --color-enemigo-level5: red;
+}
+
+html {
+    font-size: 62.5%;
+
+/* Set font size for easy rem calculations
+* default document font size = 16px, 1rem = 16px, 100% = 16px
+* (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+*/
+}
+
+/* Breakpoints for responsive design. */
+/* 1200px / 10px = 120rem */
+@media (max-width: 120rem) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+/* 980px / 10px = 98rem */
+@media (max-width: 98rem) {
+    html {
+        font-size: 60%;
+    }
+}
+
+/* 460px / 10px = 46rem */
+@media (max-width: 46rem) {
+    html {
+        font-size: 55%;
+    }
+} 
+
+/* 350px / 10px = 35rem */
+@media (max-width: 35rem) {
+    html {
+        font-size: 34%;
+    }
+}
+
+/* 280px / 10px = 28rem */
+@media (max-width: 28rem) {
+    html {
+        font-size: 30%;
+    }
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.8rem;
+    background-color: var(--color-fondo);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizarra {
+    background: linear-gradient(
+        45deg,
+        var(--color-campo-amigo),
+        var(--color-campo-enemigo)
+    );
+    border: solid black 0.5px;
+    width: 13rem;
+    height: 34rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.life {
+    width: 11rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.life.enemigo {
+    margin: 2rem 0rem 0rem 0rem;
+}
+
+.corazon-barra {
+    width: 9.4rem;
+    height: 2.2rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.corazon-barra .imagen, 
+.escudo-barra .imagen {
+    width: 2.2rem;
+    height: 2.1rem;
+    display: inline;
+}
+.corazon-barra .imagen:hover, 
+.escudo-barra .imagen:hover {
+    cursor: pointer;
+    transform: translateY(0.8rem);
+    transition: 1s transform ease-in;
+}
+
+.campos {
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo {
+    width: 40rem;
+    height: 30rem;
+    border-radius: 50% 50% 0% 0%;
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.campo.enemigo {
+    background-color: var(--color-campo-enemigo);
+}
+.campo.tu {
+    background-color: var(--color-campo-amigo);
+    transform: rotate(180deg);
+}
+.campo.tu .nombre-tu {
+    transform: rotate(180deg);
+    text-decoration: line-through;
+}
+
+.jugador {
+    width: 7.8rem;
+    height: 7.8rem;
+    border-radius: 50%;
+    border: solid black 0.5px;
+    border-style: double;
+}
+.jugador.enemigo {
+    background-color: var(--color-campo-amigo);
+}
+.jugador.tu {
+    background-color: var(--color-campo-enemigo);
+}
+
+.stats {
+    border: solid gray 0.1rem;
+    border-style: dotted;
+    width: 34rem;
+    height: 11rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0.8rem 0rem 0rem 0rem;
+}
+.stats.enemigo{
+    align-items: flex-end;
+    border-radius: 20% 20% 0% 0%;
+}
+.stats.tu {
+    transform: rotate(180deg);
+    border-radius: 0% 0% 20% 20%;
+}
+
+.franja-btn {
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.franja-btn button {
+    width: 10rem;
+    margin-left: 15.2rem;
+    background-color: var(--color-campo-enemigo);
+    border-radius: 5px;
+    font-size: 2.1rem;
+}
+
+.franja-btn button:hover {
+    cursor: pointer;
+    background-color: var(--color-campo-amigo);
+    transition: 1s background-color ease-out;
+}
+
+.franja-atk-def-btn {
+    width: 40rem;
+    height: 4rem;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -4rem;
+}
+
+.franja-atk-def-btn button {
+    width: 8rem;
+}
+
+.bottom-btn {
+  border-radius: 4px;  
+}
+.bottom-btn:hover {
+    cursor: pointer;
+}
+
+.atk-btn {
+    transform: skew(0deg, 20deg);
+    background-color: var(--color-campo-amigo);
+    color: red;
+}
+.atk-btn:hover {
+    background-color: red;
+    color: white;
+    transition: 1s background-color ease-in 0ms;
+}
+
+.def-btn {
+    transform: skew(0deg, -20deg);
+    background-color: var(--color-campo-enemigo);
+}
+.def-btn:hover {
+    background-color: black;
+    color: white;
+    transition: 1s background-color ease-in 0ms;
+}
+
+.franja-atk-def-btn .imagen {
+    margin-left: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
