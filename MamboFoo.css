@@ -37,6 +37,9 @@ html {
     html {
         font-size: 60%;
     }
+    body {
+        background-color: brown;
+    }
 }
 
 /* 460px / 10px = 46rem */
