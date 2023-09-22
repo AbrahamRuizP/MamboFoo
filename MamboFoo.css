@@ -42,7 +42,7 @@ html {
 /* 460px / 10px = 46rem */
 @media (max-width: 46rem) {
     html {
-        font-size: 56%;
+        font-size: 55%;
     }
 } 
 
