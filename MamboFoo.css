@@ -37,9 +37,6 @@ html {
     html {
         font-size: 60%;
     }
-    body {
-        background-color: brown;
-    }
 }
 
 /* 460px / 10px = 46rem */
@@ -47,19 +44,12 @@ html {
     html {
         font-size: 56%;
     }
-    body {
-        background-color: green;
-    }
 } 
 
 /* 350px / 10px = 35rem */
 @media (max-width: 35rem) {
     html {
         font-size: 46%;
-    }
-
-    body {
-        background-color: red;
     }
 }
 
