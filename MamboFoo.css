@@ -35,28 +35,34 @@ html {
 /* 980px / 10px = 98rem */
 @media (max-width: 98rem) {
     html {
-        font-size: 60%;
+        font-size: 62.5%;
     }
 }
 
 /* 460px / 10px = 46rem */
 @media (max-width: 46rem) {
     html {
-        font-size: 56%;
+        font-size: 55%;
     }
 } 
 
 /* 350px / 10px = 35rem */
 @media (max-width: 35rem) {
     html {
-        font-size: 46%;
+        font-size: 37%;
+    }
+    .franja-btn {
+        top: 10rem;
     }
 }
 
 /* 280px / 10px = 28rem */
 @media (max-width: 28rem) {
     html {
-        font-size: 42%;
+        font-size: 36%;
+    }
+    .franja-btn {
+        top: 10.5rem;
     }
 }
 
@@ -70,6 +76,10 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+p:hover {
+    color: white;
 }
 
 .pizarra {
@@ -88,15 +98,15 @@ body {
     justify-content: space-between;
 }
 
-.life {
+.life_armor {
     width: 11rem;
-    height: 10rem;
+    height: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.life.enemigo {
-    margin: 2rem 0rem 0rem 0rem;
+.life_armor.enemigo {
+    margin: 1.8rem 0rem 0rem 0rem;
 }
 
 .corazon-barra {
@@ -156,6 +166,9 @@ body {
     border-radius: 50%;
     border: solid black 0.5px;
     border-style: double;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .jugador.enemigo {
     background-color: var(--color-campo-amigo);
@@ -183,6 +196,10 @@ body {
     border-radius: 0% 0% 20% 20%;
 }
 
+.nombre-enemigo {
+    margin-bottom: 0.5rem;
+}
+
 .franja-btn {
     width: 100%;
     height: 4rem;
@@ -206,7 +223,7 @@ body {
 }
 
 .franja-atk-def-btn {
-    width: 40rem;
+    width: 48.8rem;
     height: 4rem;
     transform: rotate(180deg);
     display: flex;
@@ -216,7 +233,8 @@ body {
 }
 
 .franja-atk-def-btn button {
-    width: 8rem;
+    width: 10.5rem;
+    font-size: 2rem;
 }
 
 .bottom-btn {
@@ -224,31 +242,34 @@ body {
 }
 .bottom-btn:hover {
     cursor: pointer;
+    color: white;
 }
 
 .atk-btn {
-    transform: skew(0deg, 20deg);
+    /*transform: skew(0deg, 20deg);*/
     background-color: var(--color-campo-amigo);
     color: red;
 }
-.atk-btn:hover {
-    background-color: red;
-    color: white;
-    transition: 1s background-color ease-in 0ms;
+
+.switch-btn {
+    background-color: green;
+    color: var(--color-campo-enemigo);
+    display: none;
 }
 
 .def-btn {
-    transform: skew(0deg, -20deg);
+    /*transform: skew(0deg, -20deg);*/
     background-color: var(--color-campo-enemigo);
-}
-.def-btn:hover {
-    background-color: black;
-    color: white;
-    transition: 1s background-color ease-in 0ms;
 }
 
 .franja-atk-def-btn .imagen {
     margin-left: 0.5rem;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.mensaje {
+    margin-left: 14rem;
+    font-size: 2.1rem;
+    padding-bottom: 2rem;
 }
